@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/galleria/1.2.9/galleria.min.js"></script>
+        <style>
+            body, .galleria {
+                position: absolute;
+                top: 0; bottom: 0; width: 100%;
+                background: #000
+            }
+        </style>
+    </head>
+    <body>
+        <div class="galleria">
+        </div>
+        <script>
+            var data = {{ pictures|safe }};
+
+            Galleria.loadTheme('//cdnjs.cloudflare.com/ajax/libs/galleria/1.2.9/themes/classic/galleria.classic.min.js');
+            Galleria.run('.galleria', {
+                dataSource: data
+            });
+        </script>
+    </body>
+</html>
